@@ -28,7 +28,7 @@ body {
   width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 img {
@@ -488,6 +488,7 @@ img {
   gap: 16px;
   justify-content: center;
   padding: 0;
+  margin-right: 80px;
 }
 
 .footer-social-link {
@@ -550,6 +551,67 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   width: 264px;
+}
+
+
+.footer-form-container {}
+
+
+.footer-subscribe-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.footer-form-subscribe {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer-form-sucscribe-field {}
+
+.footer-form-input {
+  width: 100%;
+  height: 40px;
+  min-width: 264px;
+  border: 1px solid #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: inherit;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  min-width: 77px;
+  padding: 8px 24px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: var(--Primary-Brand);
+  border-radius: 4px;
+  gap: 16px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-subscribe-btn-icon {
+  color: #ffffff;
 }
 
 
@@ -666,7 +728,7 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --------------------backdrop-------------------- */
+/* --------------------Backdrop & Modal-------------------- */
 
 .backdrop {
   position: fixed;
@@ -678,6 +740,16 @@ img {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, 50%);
+}
+
 .modal {
   width: 408px;
   min-height: 576px;
@@ -686,18 +758,14 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 72px 24px 24px 24px;
   transform: translate(-50%, -50%);
-  padding: 24px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, 50%);
-}
 
 .modal-close {
   position: absolute;
@@ -725,12 +793,164 @@ img {
   fill: #ffffff
 }
 
-.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
 
 .order-service-btn-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* -- --------------Backdrop & Modal------------  */
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--Dark);
+  margin-bottom: 16px;
+}
+
+.modal-form-field {
+  margin-bottom: 8px;
+}
+
+.modal-form-field-description {
+  display: block;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8E8F99;
+  margin-bottom: 4px;
+}
+
+.modal-form-input-wrap {
+  display: block;
+  position: relative;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding-left: 38px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus {
+  border-color: #4D5AE5;
+  outline: transparent;
+}
+
+
+
+.modal-form-input:focus+.model-form-icon {
+  fill: #4D5AE5;
+}
+
+.model-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 18px;
+  height: 24px;
+}
+
+.field-user-comment {
+  margin-bottom: 16px;
+}
+
+.modal-form-comment {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-policy-wrap {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.modal-form-check {
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-check-icon {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  fill: transparent;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: outline 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-check:checked+.form-check-icon {
+  background-color: #404bbf;
+  fill: #404bbf;
+}
+
+.modal-form-check-description {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8E8F99;
+}
+
+.privacy-policy {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--Primary-Brand);
+}
+
+.privacy-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.modal-form {}
+
+.modal-form-submit {
+  align-self: center;
+  padding: 16px 32px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  min-width: 169px;
+  background: var(--Primary-Brand);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
